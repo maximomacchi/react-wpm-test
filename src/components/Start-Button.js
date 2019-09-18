@@ -1,5 +1,11 @@
 import React from "react";
 
-function StartButton() {
-  return <div>Start Button</div>;
+function StartButton(props) {
+  return (
+    <div>
+      <button onClick={props.startTest}>Start Test</button>
+    </div>
+  );
 }
+
+export default StartButton;
