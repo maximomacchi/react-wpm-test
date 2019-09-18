@@ -1,9 +1,9 @@
 import React from "react";
 
-function StartButton(props) {
+function StartButton({ startTest }) {
   return (
     <div>
-      <button onClick={props.startTest}>Start Test</button>
+      <button onClick={startTest}>Start Test</button>
     </div>
   );
 }

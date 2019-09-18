@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Form(props) {
+function Form({ wordToType, wordsTyped, incrementWordsTyped }) {
   const [input, setInput] = useState("");
 
   function updateInput(e) {
@@ -8,15 +8,17 @@ function Form(props) {
   }
 
   useEffect(() => {
-    if (input === props.wordToType) {
+    if (input === wordToType) {
       console.log("Word typed!");
+      incrementWordsTyped();
       setInput("");
     }
-  }, [input]);
+  }, [input, wordToType, incrementWordsTyped]);
 
   return (
     <div>
-      <h3>{props.wordToType}</h3>
+      <h3>{wordToType}</h3>
+      <h4>Words Typed: {wordsTyped}</h4>
       <form>
         <input type="text" value={input} onChange={updateInput}></input>
       </form>
