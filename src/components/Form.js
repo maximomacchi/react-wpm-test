@@ -19,7 +19,7 @@ function Form({ wordToType, wordsTyped, incrementWordsTyped }) {
     <div>
       <h3>{wordToType}</h3>
       <h4>Words Typed: {wordsTyped}</h4>
-      <form>
+      <form onSubmit={e => e.preventDefault()}>
         <input type="text" value={input} onChange={updateInput}></input>
       </form>
     </div>
