@@ -1,0 +1,64 @@
+$dark-sea: #485167;
+$light-sea: #8892ac;
+$gray: #d7dbe3;
+$white: #f3f4f7;
+
+body {
+  background-color: $dark-sea;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20vh;
+
+  div {
+    text-align: center;
+    padding: 5px;
+  }
+}
+
+.Start-Button {
+  button {
+    background-color: $light-sea;
+    border: 2px solid $gray;
+    color: $white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    padding: 10px 25px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.Timer {
+  color: $white;
+}
+
+.Form {
+  color: $white;
+
+  form {
+    input[type="text"] {
+      background-color: $dark-sea;
+      border: none;
+      border-bottom: 2px solid $gray;
+      color: $white;
+      font-family: "Open Sans", sans-serif;
+      font-size: 20px;
+      padding-bottom: 10px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.WPM {
+  color: $white;
+}

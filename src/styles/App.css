@@ -1,1 +1,63 @@
-/* No CSS *//*# sourceMappingURL=App.css.map */
+body {
+  background-color: #485167;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20vh;
+}
+
+.App div {
+  text-align: center;
+  padding: 5px;
+}
+
+.Start-Button button {
+  background-color: #8892ac;
+  border: 2px solid #d7dbe3;
+  color: #f3f4f7;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  padding: 10px 25px;
+}
+
+.Start-Button button:hover {
+  cursor: pointer;
+}
+
+.Timer {
+  color: #f3f4f7;
+}
+
+.Form {
+  color: #f3f4f7;
+}
+
+.Form form input[type="text"] {
+  background-color: #485167;
+  border: none;
+  border-bottom: 2px solid #d7dbe3;
+  color: #f3f4f7;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.Form form input[type="text"]:focus {
+  outline: none;
+}
+
+.WPM {
+  color: #f3f4f7;
+}
+/*# sourceMappingURL=App.css.map */
