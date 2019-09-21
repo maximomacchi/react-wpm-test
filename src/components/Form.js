@@ -9,7 +9,7 @@ function Form({ wordToType, wordsTyped, incrementWordsTyped, testActive }) {
 
   useEffect(() => {
     if (input === wordToType) {
-      console.log("Word typed!");
+      console.log("Word typed correctly!");
       incrementWordsTyped();
       setInput("");
     }
@@ -24,7 +24,7 @@ function Form({ wordToType, wordsTyped, incrementWordsTyped, testActive }) {
 
   if (testActive) {
     return (
-      <div>
+      <div className="Form">
         <h3>{wordToType}</h3>
         <h4>Words Typed: {wordsTyped}</h4>
         <form onSubmit={e => e.preventDefault()}>
@@ -33,7 +33,9 @@ function Form({ wordToType, wordsTyped, incrementWordsTyped, testActive }) {
       </div>
     );
   }
-  return null;
+  return (
+    <div className="WPM">Your current typing speed is {wordsTyped} WPM</div>
+  );
 }
 
 export default Form;
