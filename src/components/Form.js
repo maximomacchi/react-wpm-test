@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Form({ wordToType, wordsTyped, incrementWordsTyped, testActive }) {
+function Form({ wordToType, wordsTyped, incrementWordsTyped }) {
   const [input, setInput] = useState("");
 
   function updateInput(e) {
@@ -15,26 +15,21 @@ function Form({ wordToType, wordsTyped, incrementWordsTyped, testActive }) {
     }
   }, [input, wordToType, incrementWordsTyped]);
 
-  // Input is cleared when typing test ends
+  // Input is cleared when typing test begins
   useEffect(() => {
-    if (!testActive) {
+    if (wordsTyped === 0) {
       setInput("");
     }
-  }, [testActive]);
+  }, [wordsTyped]);
 
-  if (testActive) {
-    return (
-      <div className="Form">
-        <h3>{wordToType}</h3>
-        <h4>Words Typed: {wordsTyped}</h4>
-        <form onSubmit={e => e.preventDefault()}>
-          <input type="text" value={input} onChange={updateInput}></input>
-        </form>
-      </div>
-    );
-  }
   return (
-    <div className="WPM">Your current typing speed is {wordsTyped} WPM</div>
+    <div className="Form">
+      <h3>{wordToType}</h3>
+      <h4>Words Typed: {wordsTyped}</h4>
+      <form onSubmit={e => e.preventDefault()}>
+        <input type="text" value={input} onChange={updateInput}></input>
+      </form>
+    </div>
   );
 }
 

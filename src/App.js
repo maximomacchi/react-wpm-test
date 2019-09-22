@@ -97,18 +97,25 @@ function App() {
     return () => clearInterval(timeInterval);
   }, [time]);
 
-  return (
-    <div className="App">
-      <Timer time={time} testActive={testActive} />
-      <StartButton startTest={startTest} testActive={testActive} />
-      <Form
-        wordToType={wordToType}
-        wordsTyped={wordsTyped}
-        incrementWordsTyped={incrementWordsTyped}
-        testActive={testActive}
-      />
-    </div>
-  );
+  if (testActive) {
+    return (
+      <div className="App">
+        <Timer time={time} />
+        <Form
+          wordToType={wordToType}
+          wordsTyped={wordsTyped}
+          incrementWordsTyped={incrementWordsTyped}
+        />
+      </div>
+    );
+  } else {
+    return (
+      <div className="App">
+        <StartButton startTest={startTest} />
+        <div className="WPM">Your current typing speed is {wordsTyped} WPM</div>
+      </div>
+    );
+  }
 }
 
 export default App;
