@@ -37,10 +37,22 @@ body {
 
 .Timer {
   color: $white;
+  font-size: 45px;
 }
 
 .Form {
-  color: $white;
+  .words-container {
+    max-width: 70vw;
+  }
+
+  .word-to-type {
+    color: $white;
+  }
+
+  .words-before,
+  .words-after {
+    color: $light-sea;
+  }
 
   form {
     input[type="text"] {
@@ -51,6 +63,7 @@ body {
       font-family: "Open Sans", sans-serif;
       font-size: 20px;
       padding-bottom: 10px;
+      text-align: center;
 
       &:focus {
         outline: none;

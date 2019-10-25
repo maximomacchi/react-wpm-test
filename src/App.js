@@ -6,7 +6,7 @@ import StartButton from "./components/Start-Button";
 import Form from "./components/Form";
 
 const TEST_TIME = 10;
-const wordsToType = [
+const wordsList = [
   "hello",
   "hi",
   "test",
@@ -65,7 +65,6 @@ const wordsToType = [
 function App() {
   const [time, setTime] = useState(0);
   const [wordsTyped, setWordsTyped] = useState(0);
-  const [wordToType, setWordToType] = useState(wordsToType[wordsTyped]);
   const [testActive, setTestActive] = useState(false);
 
   function startTest() {
@@ -77,10 +76,7 @@ function App() {
     setWordsTyped(wordsTyped + 1);
   }
 
-  useEffect(() => {
-    setWordToType(wordsToType[wordsTyped]);
-  }, [wordsTyped]);
-
+  // Logic for starting test timer
   useEffect(() => {
     let timeInterval = null;
     if (time > 0) {
@@ -102,7 +98,7 @@ function App() {
       <div className="App">
         <Timer time={time} />
         <Form
-          wordToType={wordToType}
+          wordsList={wordsList}
           wordsTyped={wordsTyped}
           incrementWordsTyped={incrementWordsTyped}
         />

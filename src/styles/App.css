@@ -37,10 +37,20 @@ body {
 
 .Timer {
   color: #f3f4f7;
+  font-size: 45px;
 }
 
-.Form {
+.Form .words-container {
+  max-width: 70vw;
+}
+
+.Form .word-to-type {
   color: #f3f4f7;
+}
+
+.Form .words-before,
+.Form .words-after {
+  color: #8892ac;
 }
 
 .Form form input[type="text"] {
@@ -51,6 +61,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 20px;
   padding-bottom: 10px;
+  text-align: center;
 }
 
 .Form form input[type="text"]:focus {
