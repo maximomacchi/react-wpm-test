@@ -41,7 +41,9 @@ body {
 }
 
 .Form .words-container {
+  max-height: 30vh;
   max-width: 70vw;
+  overflow: auto;
 }
 
 .Form .word-to-type {
