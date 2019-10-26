@@ -6,70 +6,26 @@ import StartButton from "./components/Start-Button";
 import Form from "./components/Form";
 
 const TEST_TIME = 10;
-const wordsList = [
-  "hello",
-  "hi",
-  "test",
-  "again",
-  "hey",
-  "hello",
-  "hi",
-  "test",
-  "again",
-  "hello",
-  "hi",
-  "test",
-  "again",
-  "hello",
-  "hi",
-  "test",
-  "again",
-  "hello",
-  "hi",
-  "test",
-  "again",
-  "hello",
-  "hi",
-  "test",
-  "again",
-  "hello",
-  "hi",
-  "test",
-  "again",
-  "hello",
-  "hi",
-  "test",
-  "again",
-  "hello",
-  "hi",
-  "test",
-  "again",
-  "hello",
-  "hi",
-  "test",
-  "again",
-  "hello",
-  "hi",
-  "test",
-  "again",
-  "hello",
-  "hi",
-  "test",
-  "again",
-  "hello",
-  "hi",
-  "test",
-  "again"
-];
 
 function App() {
   const [time, setTime] = useState(0);
+  const [wordsList, setWordsList] = useState(["test", "hello"]);
   const [wordsTyped, setWordsTyped] = useState(0);
   const [testActive, setTestActive] = useState(false);
 
   function startTest() {
-    setTime(TEST_TIME);
-    setWordsTyped(0);
+    fetch("https://baconipsum.com/api/?type=meat?format=json")
+      .then(response => response.json())
+      .then(json => {
+        let wordsListToSet = [];
+        for (let sentence in json) {
+          wordsListToSet.push(json[sentence].split(" "));
+        }
+        wordsListToSet = [].concat.apply([], wordsListToSet);
+        setWordsList(wordsListToSet);
+        setTime(TEST_TIME);
+        setWordsTyped(0);
+      });
   }
 
   function incrementWordsTyped() {
