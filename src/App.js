@@ -12,8 +12,10 @@ function App() {
   const [wordsList, setWordsList] = useState(["test", "hello"]);
   const [wordsTyped, setWordsTyped] = useState(0);
   const [testActive, setTestActive] = useState(false);
+  const [testLoading, setTestLoading] = useState(false);
 
   function startTest() {
+    setTestLoading(true);
     fetch("https://baconipsum.com/api/?type=meat?format=json")
       .then(response => response.json())
       .then(json => {
@@ -25,6 +27,7 @@ function App() {
         setWordsList(wordsListToSet);
         setTime(TEST_TIME);
         setWordsTyped(0);
+        setTestLoading(false);
       });
   }
 
@@ -58,6 +61,12 @@ function App() {
           wordsTyped={wordsTyped}
           incrementWordsTyped={incrementWordsTyped}
         />
+      </div>
+    );
+  } else if (testLoading) {
+    return (
+      <div className="App">
+        <div className="loader"></div>
       </div>
     );
   } else {
