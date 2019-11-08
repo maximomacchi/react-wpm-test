@@ -5,7 +5,7 @@ import Timer from "./components/Timer";
 import StartButton from "./components/Start-Button";
 import Form from "./components/Form";
 
-const TEST_TIME = 10;
+const TEST_TIME = 30;
 
 function App() {
   const [time, setTime] = useState(0);
@@ -24,6 +24,10 @@ function App() {
           wordsListToSet.push(json[sentence].split(" "));
         }
         wordsListToSet = [].concat.apply([], wordsListToSet);
+        wordsListToSet = wordsListToSet.filter(word => {
+          return word !== "";
+        });
+        console.log(wordsListToSet);
         setWordsList(wordsListToSet);
         setTime(TEST_TIME);
         setWordsTyped(0);
