@@ -17,6 +17,7 @@ body {
   margin-top: 20vh;
 }
 
+.App h1,
 .App div {
   text-align: center;
   padding: 5px;
@@ -73,9 +74,9 @@ body {
 }
 
 .Form .words-container {
-  max-height: 40vh;
+  max-height: 50vh;
   max-width: 70vw;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .Form .word-to-type {
