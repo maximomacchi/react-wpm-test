@@ -8,6 +8,14 @@ import Form from "./components/Form";
 const TEST_TIME = 60;
 
 function App() {
+  /* State:
+  time: Time remaining on typing test
+  wordsList: List of words user has to type
+  wordsTyped: Number of words user has typed during test
+  testActive: boolean condition stating whether test is currently in session
+  testLoading: boolean condition stating whether API data is being fetched
+  */
+
   const [time, setTime] = useState(0);
   const [wordsList, setWordsList] = useState(["test", "hello"]);
   const [wordsTyped, setWordsTyped] = useState(0);
@@ -20,10 +28,13 @@ function App() {
       .then(response => response.json())
       .then(json => {
         let wordsListToSet = [];
+        // Split string into list of words
         for (let sentence in json) {
           wordsListToSet.push(json[sentence].split(" "));
         }
         wordsListToSet = [].concat.apply([], wordsListToSet);
+        /* Filter out items in array that are blank due to there being two
+            spaces between period and start of new sentence */
         wordsListToSet = wordsListToSet.filter(word => {
           return word !== "";
         });
@@ -42,13 +53,13 @@ function App() {
   useEffect(() => {
     let timeInterval = null;
     if (time > 0) {
-      // Test in progress
+      // Test in progress so decrement time by one second
       setTestActive(true);
       timeInterval = setInterval(() => {
         setTime(time => time - 1);
       }, 1000);
     } else {
-      // Test complete
+      // Test complete so stop timer from counting down
       clearInterval(timeInterval);
       setTestActive(false);
     }

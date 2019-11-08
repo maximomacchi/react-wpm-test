@@ -73,7 +73,7 @@ body {
 }
 
 .Form .words-container {
-  max-height: 30vh;
+  max-height: 40vh;
   max-width: 70vw;
   overflow: auto;
 }
@@ -103,10 +103,6 @@ body {
 }
 
 .header {
-  color: #f3f4f7;
-}
-
-.WPM {
   color: #f3f4f7;
 }
 /*# sourceMappingURL=App.css.map */
