@@ -6,7 +6,7 @@ Head to link, read the instructions, and click start to begin
 
 ## Basic component structure
 
-### App
+### `App`
 
 State:
 
@@ -31,7 +31,7 @@ While test is not active, renders:
 - `Start-Button` component
 - User's WPM based on most recent test taken
 
-### Timer
+### `Timer`
 
 Props:
 
@@ -40,7 +40,7 @@ Props:
 Renders:  
 Time remaining on test
 
-### Form
+### `Form`
 
 Props:
 
@@ -58,7 +58,7 @@ State:
 Renders:  
 Words to be typed along with current word that must be typed. Also renders the form for the user to type in during the test.
 
-### Start-Button
+### `Start-Button`
 
 Props:
 
@@ -75,7 +75,7 @@ At the start of each test, the `Start-Button` component calls the `startTest()` 
 
 ## What about styling?
 
-SCSS file is converted to CSS using VS Code extension [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass). Loader animation based off of[W3School's loader](https://www.w3schools.com/howto/howto_css_loader.asp)
+SCSS file is converted to CSS using VS Code extension [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass). Loader animation based off of [W3School's loader](https://www.w3schools.com/howto/howto_css_loader.asp)
 
 #
 
