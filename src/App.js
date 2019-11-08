@@ -5,7 +5,7 @@ import Timer from "./components/Timer";
 import StartButton from "./components/Start-Button";
 import Form from "./components/Form";
 
-const TEST_TIME = 30;
+const TEST_TIME = 60;
 
 function App() {
   const [time, setTime] = useState(0);
@@ -27,7 +27,6 @@ function App() {
         wordsListToSet = wordsListToSet.filter(word => {
           return word !== "";
         });
-        console.log(wordsListToSet);
         setWordsList(wordsListToSet);
         setTime(TEST_TIME);
         setWordsTyped(0);
@@ -76,8 +75,17 @@ function App() {
   } else {
     return (
       <div className="App">
+        <h1 className="header">Welcome to my typing speed app!</h1>
+        <div className="header">Rules:</div>
+        <ul className="header">
+          <li>Type as many words as you can for 60 seconds</li>
+          <li>No need to enter spaces between each word</li>
+          <li>Punctuation and letter casing must match</li>
+        </ul>
         <StartButton startTest={startTest} />
-        <div className="WPM">Your current typing speed is {wordsTyped} WPM</div>
+        <div className="header">
+          Your current typing speed is {wordsTyped} WPM
+        </div>
       </div>
     );
   }

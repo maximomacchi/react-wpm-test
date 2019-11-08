@@ -102,6 +102,10 @@ body {
   outline: none;
 }
 
+.header {
+  color: #f3f4f7;
+}
+
 .WPM {
   color: #f3f4f7;
 }
