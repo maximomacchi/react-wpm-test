@@ -2,7 +2,8 @@
 
 ## How to use
 
-Head to link, read the instructions, and click start to begin
+[Click here](https://maximo-react-wpm-test.netlify.com), read the instructions, and click start to begin.  
+Official link: https://maximo-react-wpm-test.netlify.com
 
 ## Basic component structure
 
